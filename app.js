@@ -19,6 +19,12 @@ new Vue({
             this.hayUnaPartidaEnJuego = true
         },
         atacar: function () {
+            this.saludMonstruo-=this.calcularHeridas(3,10)
+
+            if(this.verificarGanador())
+                return ;
+            
+            this.ataqueDelMonstruo()
         },
 
         ataqueEspecial: function () {
@@ -29,15 +35,19 @@ new Vue({
 
         registrarEvento(evento) {
         },
+
         terminarPartida: function () {
         },
 
-        ataqueDelMonstruo: function () {
+        ataqueDelMonstruo: function (min=5,max=12) {
+            this.saludJugador-=calcularHeridas(min,max)
+            if(this.verificarGanador())
+                return ;
+            
         },
 
-        calcularHeridas: function (rango) {
-            return 0
-
+        calcularHeridas: function (min,max) {
+            return parseInt(Math.random() * (max - min) + min)+1;
         },
         verificarGanador: function () {
             return false;
