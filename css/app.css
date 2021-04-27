@@ -39,11 +39,13 @@
 }
 
 .log ul .player-turno {
+    text-align: left;
     color: #eee;
     background-color: goldenrod;
 }
 
 .log ul .monster-turno {
+    text-align: right;
     color: #eee;
     background-color:rgb(3, 110, 12);
 }
